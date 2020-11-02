@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// , test instructions
+
 inquirer
   .prompt([
     {
@@ -32,6 +32,16 @@ inquirer
         type: 'input',
         message: 'add some contribution guidelines:',
         name: 'contribution',
+    },
+    {
+        type: 'input',
+        message: 'add test instructions (a link for testing can be entered in next question):',
+        name: 'test',
+    },
+    {
+        type: 'input',
+        message: 'add test link (will be added below test instructions):',
+        name: 'testLink',
     },
     {
         type: 'input',
@@ -77,6 +87,9 @@ inquirer
         ${data.contribution}
 
     ##Tests
+
+        ${data.test}
+        [${data.title} Test Link](${data.testLink})
 
     ##License
     

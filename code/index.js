@@ -25,6 +25,11 @@ inquirer
     },
     {
         type: 'input',
+        message: 'Usage information:',
+        name: 'usage',
+    },
+    {
+        type: 'input',
         message: 'What is your GitHub username?',
         name: 'gitHub',
     },
@@ -59,6 +64,8 @@ inquirer
         [${data.title}](${data.link})
 
     ##Usage
+
+        ${data.usage}
 
     ##Contributing
 

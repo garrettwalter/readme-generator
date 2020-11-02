@@ -1,12 +1,17 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-
+// installation instructions, usage information, contribution guidelines, test instructions
 inquirer
   .prompt([
     {
       type: 'input',
       name: 'title',
       message: 'What is the title of your work?',
+    },
+    {
+        type: 'input',
+        message: 'Write a description:',
+        name: 'description',
     },
     {
         type: 'input',
@@ -36,6 +41,8 @@ inquirer
 
     ##Description
     
+        ${data.description}
+
     ##Installation
 
     ##Usage

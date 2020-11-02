@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const Choices = require('inquirer/lib/objects/choices');
 
 inquirer
   .prompt([
@@ -53,50 +54,69 @@ inquirer
         message: 'What is your Email?',
         name: 'email',
     },
+    {
+        type: 'list',
+        message: 'What type of license would you like?',
+        choices: ['MIT','Apache 2.0','Mozilla 2.0','Common Development and Distribution License'],
+        name: 'license'
+    }
   ])
   .then((data) => {
     
+    let chosenLicense;
+    if(data.license = 'MIT') {
+        chosenLicense = 'mit';
+    } else if(data.license = 'Apache 2.0'){
+        chosenLicense = '';
+    } else if(data.license = 'Mozilla 2.0'){
+        chosenLicense = '';
+    } else if(data.license = 'Common Development and Distribution License'){
+        chosenLicense = '';
+    }
+
     const readmeTemplate = `
-    #${data.title}
+#${data.title}
 
-    #Table of Contents
+#Table of Contents
 
-    - [Description](#Description)
-    - [Installation](#Installation)
-    - [Usage](#Usage)
-    - [Contributing](#Contributing)
-    - [Tests](#Tests)
-    - [License](#License)
-    - [Questions](#Questions)
+- [Description](#Description)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Contributing](#Contributing)
+- [Tests](#Tests)
+- [License](#License)
+- [Questions](#Questions)
 
-    ##Description
+##Description
     
-        ${data.description}
+    ${data.description}
 
-    ##Installation
+##Installation
 
-        ${data.instructions}
-        [${data.title}](${data.link})
+    ${data.instructions}
+    [${data.title}](${data.link})
 
-    ##Usage
+##Usage
 
-        ${data.usage}
+    ${data.usage}
 
-    ##Contributing
+##Contributing
 
-        ${data.contribution}
+    ${data.contribution}
 
-    ##Tests
+##Tests
 
-        ${data.test}
-        [${data.title} Test Link](${data.testLink})
+    ${data.test}
+    [${data.title} Test Link](${data.testLink})
 
-    ##License
+##License
+
+    ${chosenLicense}
     
-    ##Questions
+##Questions
         
-        For any questions please contact me at: [Email](mailto:${data.email})
-        Or visit my GitHub here: [GitHub](https://github.com/${data.gitHub})
+    For any questions please contact me at: [Email](mailto:${data.email})
+    Or visit my GitHub here: [GitHub](https://github.com/${data.gitHub})
         `
 
     fs.writeFile("README.md", readmeTemplate, "utf8", (err) =>

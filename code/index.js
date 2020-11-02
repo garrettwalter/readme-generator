@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// installation instructions, usage information, contribution guidelines, test instructions
+// usage information, contribution guidelines, test instructions
 inquirer
   .prompt([
     {
@@ -12,6 +12,16 @@ inquirer
         type: 'input',
         message: 'Write a description:',
         name: 'description',
+    },
+    {
+        type: 'input',
+        message: 'Installation Instructions (you will put a link to your work next):',
+        name: 'instructions',
+    },
+    {
+        type: 'input',
+        message: 'Link to your work (will be printed below instructions):',
+        name: 'link',
     },
     {
         type: 'input',
@@ -44,6 +54,9 @@ inquirer
         ${data.description}
 
     ##Installation
+
+        ${data.instructions}
+        [${data.title}](${data.link})
 
     ##Usage
 

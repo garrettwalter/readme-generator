@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// usage information, contribution guidelines, test instructions
+// , test instructions
 inquirer
   .prompt([
     {
@@ -27,6 +27,11 @@ inquirer
         type: 'input',
         message: 'Usage information:',
         name: 'usage',
+    },
+    {
+        type: 'input',
+        message: 'add some contribution guidelines:',
+        name: 'contribution',
     },
     {
         type: 'input',
@@ -68,6 +73,8 @@ inquirer
         ${data.usage}
 
     ##Contributing
+
+        ${data.contribution}
 
     ##Tests
 

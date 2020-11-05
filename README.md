@@ -13,6 +13,11 @@
 
 This application allows the user to generate a readme.md file for an application with the command line. This read me contains a Description, Table of Contents, Installation information, Usage information, a choice of license, Contributing information, Tests, and Questions.
 
+## Sample
+
+Below is a sample README.md file for a project repository generated using this application:
+[Code-Quiz](./SAMPLEREADME.md)
+
 ## User Story
 
 ```

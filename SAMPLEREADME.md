@@ -13,7 +13,7 @@
 
 ## Description
     
-This application is a 5 question quiz on basic Coding knowlege. When the user starts the quiz a timer counting down appears in the corner. They must answer correctly to move along, but if they answer wrong they lose time.
+This application is a 5 question quiz on basic Coding knowledge. When the user starts the quiz a timer counting down appears in the corner. They must answer correctly to move along, but if they answer wrong they lose time.
 
 ## Installation
 

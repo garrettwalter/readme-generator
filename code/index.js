@@ -70,7 +70,7 @@ inquirer
     
     let chosenLicense;
     if(data.license = 'MIT') {
-        chosenLicense = `Copyright <YEAR> <${data.name}>
+        chosenLicense = `Copyright 2020 ${data.name}
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files 
 (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, 
@@ -85,7 +85,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         
         `;
     } else if(data.license = 'ISC'){
-        chosenLicense = `Copyright <YEAR> <${data.name}>
+        chosenLicense = `Copyright 2020 ${data.name}
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted,
 provided that the above copyright notice and this permission notice appear in all copies.
@@ -99,7 +99,7 @@ OR PERFORMANCE OF THIS SOFTWARE.`;
 
     const readmeTemplate = `
 # ${data.title}
-
+[![License: ${data.license}](https://img.shields.io/badge/License-${data.license}-blue.svg)](https://opensource.org/licenses/${data.license})
 ## Table of Contents
 - [Description](#Description)
 - [Installation](#Installation)
@@ -132,8 +132,6 @@ ${data.test}
 [${data.title} Test Link](${data.testLink})
 
 ## License
-
-[![License: ${data.license}](https://img.shields.io/badge/License-${data.license}-blue.svg)](https://opensource.org/licenses/${data.license})
     
 ${chosenLicense}
     
